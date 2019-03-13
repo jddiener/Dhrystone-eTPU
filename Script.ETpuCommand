@@ -1,0 +1,94 @@
+
+// Change the following included file name
+// to match that created by the compiler.
+// Example: For an output file named 'MyCode.elf'
+// then the included file will be 'MyCode_defines.h'
+#include "Dhrystone_defines.h"
+
+// load initialized data
+
+#undef __GLOBAL_MEM_INIT32
+#define __GLOBAL_MEM_INIT32(address, value) write_global_data32(address, value);
+#include "Dhrystone_idata.h"
+#undef __GLOBAL_MEM_INIT32
+
+// Run this test on this channel number
+#define BENCHMARK_CHAN        20
+
+// For this system clock and TCR1 increment rate configuration
+// this is the numer of TCR1 increments per microsecond
+#define TCR1_PER_US 50
+
+// Set the clock to 100 Mhz (10 ns/clock -->1e7 FemtoSeconds/clock)
+set_clk_period(10000000);
+
+// Engine Configuration Register Functions  (ETPUECR)
+write_entry_table_base_addr(_ENTRY_TABLE_BASE_ADDR_);
+
+// Configure the TCR1 Control Bits, and enable
+write_tcr1_control(2);        // System clock/2,  NOT gated by TCRCLK
+write_tcr1_prescaler(1);
+
+//----------------------------------------------------------------------------
+write_chan_base_addr(       BENCHMARK_CHAN, _CHANNEL_FRAME_1ETPU_BASE_ADDR);
+write_chan_func(            BENCHMARK_CHAN, _FUNCTION_NUM_DHRYSTONE_);
+write_chan_entry_condition( BENCHMARK_CHAN, _ENTRY_TABLE_TYPE_DHRYSTONE_);
+write_chan_hsrr(            BENCHMARK_CHAN, 7);
+write_chan_cpr(             BENCHMARK_CHAN, 3);
+
+// Enable the TCR1 and TCR2 counters 
+// after initialization has completed
+wait_time(1);
+write_global_time_base_enable(1);
+
+// Run for 100 micro-seconds
+wait_time(100);
+
+// verify test ran correctly
+verify_val_int("Int_Glob", "==", 5);
+verify_val_int("Bool_Glob", "==", 1);
+verify_val_int("Ch_1_Glob", "==", 'A');
+verify_val_int("Ch_2_Glob", "==", 'B');
+verify_val_int("Arr_1_Glob[8]", "==", 7);
+verify_val_int("Arr_2_Glob[8][7]", "==", 11);
+//printf ("Ptr_Glob->\n");
+//printf ("  Ptr_Comp:          %d\n", (int) Ptr_Glob->Ptr_Comp);
+//printf ("        should be:   (implementation-dependent)\n");
+verify_val_int("Ptr_Glob->Discr", "==", 0);
+verify_val_int("Ptr_Glob->variant.var_1.Enum_Comp", "==", 2);
+verify_val_int("Ptr_Glob->variant.var_1.Int_Comp", "==", 17);
+verify_str("Ptr_Glob->variant.var_1.Str_Comp", "==", "\"DHRYSTONE PROGRAM, SOME STRING\"");
+//printf ("Next_Ptr_Glob->\n");
+//printf ("  Ptr_Comp:          %d\n", (int) Next_Ptr_Glob->Ptr_Comp);
+//printf ("        should be:   (implementation-dependent), same as above\n");
+verify_val_int("Next_Ptr_Glob->Discr", "==", 0);
+verify_val_int("Next_Ptr_Glob->variant.var_1.Enum_Comp", "==", 1);
+verify_val_int("Next_Ptr_Glob->variant.var_1.Int_Comp", "==", 18);
+verify_str("Next_Ptr_Glob->variant.var_1.Str_Comp", "==", "\"DHRYSTONE PROGRAM, SOME STRING\"");
+verify_val_int("Int_1_Loc", "==", 5);
+//verify_val_int("Int_2_Loc", "==", 13); // local that gets assigned to a register and thus can't be checked this way, after it's scope of usage is done
+verify_val_int("Int_3_Loc", "==", 7);
+verify_val_int("Enum_Loc", "==", 1);
+verify_str("Str_1_Loc", "==", "\"DHRYSTONE PROGRAM, 1'ST STRING\"");
+verify_str("Str_2_Loc", "==", "\"DHRYSTONE PROGRAM, 2'ND STRING\"");
+
+#ifndef _ASH_WARE_AUTO_RUN_
+U32 T1, T2;
+T1 = read_mem_u24(ETPU_DATA_24_SPACE, _GLOB_VAR24_Begin_TCR1_);
+T2 = read_mem_u24(ETPU_DATA_24_SPACE, _GLOB_VAR24_End_TCR1_);
+F64 dhrystones_per_sec;
+dhrystones_per_sec = (1.0 / ((T2-T1)/ 50.0)) * 1000000.0;
+F64 DMIPS = dhrystones_per_sec / 1757;
+print("\"Dhyrstones/sec = %f, DMIPS = %f\" dhrystones_per_sec, DMIPS");
+#endif
+
+//-------------------------------------------
+#ifdef _ASH_WARE_AUTO_RUN_
+// If a regression test, exit (close) the simulator
+exit();
+#else
+// If NOT part of a regression test
+// Message the user in a dialog that the test has ended
+print("All tests are done!!");
+#endif // _ASH_WARE_AUTO_RUN_
+

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<user creator="ASH WARE, Inc." version="2.70.0.0">
+  <source_code_search />
+  <app_dimensions x="70" y="37" w="1600" h="1000" />
+  <splitter name="projectBtmSplitter" distance="594" total="898" orientation="horizontal" />
+  <splitter name="projectRhtSplitter" parent="projectBtmSplitter" order="1" distance="260" total="1592" orientation="vertical" />
+  <splitter name="editSplitter" parent="projectRhtSplitter" order="2" distance="646" total="1328" orientation="vertical" />
+  <splitter name="outputSplitter" parent="projectBtmSplitter" order="2" distance="1066" total="1592" orientation="vertical" />
+  <line_info_mgr />
+  <TabPage type="LogicAnalyzer" ctrl="output1TabControl">
+    <ScopeSettings selected_channel="2" selected_cursor="1" auto_scroll="True" first_chan="2" width="151" />
+    <ScopeTimes>
+      <LeftSide word_a="0" word_b="0" word_c="0" />
+      <Width word_a="0" word_b="55" word_c="4285409032" />
+      <LeftCursor word_a="0" word_b="8" word_c="560261632" />
+      <RightCursor word_a="0" word_b="16" word_c="2700523264" />
+    </ScopeTimes>
+    <ClocksTimeOptions />
+    <TimeDisplayOptions />
+    <ThreadGroups>
+      <eTPU_A index="0" group_a="1" group_b="2" group_c="4" group_d="8" group_e="16" group_f="32" group_g="64" group_h="128" />
+    </ThreadGroups>
+    <ScopeChannels>
+      <ScopeChan index="2" name="_ch20.out" alias="DHRYSTONE" target_index="0" height="31" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch2.in" alias="_ch2.in" target_index="0" height="0" chan_state_mask="0" />
+      <ScopeChan index="-1" name="_ch3.in" alias="CAM" target_index="0" height="0" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch5.in" alias="MeasurePulse" target_index="0" height="0" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch10.out" alias="PWMF_B" target_index="0" height="0" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch11.out" alias="PWMF_B_" target_index="0" height="0" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch12.out" alias="PWMF_C" target_index="0" height="0" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch13.out" alias="PWMF_C_" target_index="0" height="0" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch16.out" alias="_ch16.out" target_index="0" height="0" chan_state_mask="0" />
+      <ScopeChan index="-1" name="_ch17.out" alias="_ch17.out" target_index="0" height="0" chan_state_mask="0" />
+      <ScopeChan index="-1" name="_ch19.out" alias="_ch19.out" target_index="0" height="0" chan_state_mask="0" />
+      <ScopeChan index="-1" name="_ch21.out" alias="_ch21.out" target_index="0" height="0" chan_state_mask="0" />
+      <ScopeChan index="-1" name="_ch22.out" alias="_ch22.out" target_index="0" height="0" chan_state_mask="0" />
+      <ScopeChan index="-1" name="_ch25.out" alias="FRAME" target_index="0" height="0" chan_state_mask="255" />
+      <ScopeChan index="-1" name="_ch31.out" alias="_ch31.out" target_index="0" height="0" chan_state_mask="0" />
+    </ScopeChannels>
+  </TabPage>
+  <TabPage type="Breakpoint" is_closed="true" ctrl="projectTabControl" />
+  <TabPage type="TraceBuf" is_closed="true" ctrl="output2TabControl">
+    <eTPU_A />
+  </TabPage>
+  <TabPage type="Source" ctrl="edit1TabControl" file="dhry_1.c" top_line="249" start_pos="6545" len="0" sel_text="" />
+  <TabPage type="Text" ctrl="edit1TabControl" file="ReadMe.txt" top_line="0" sel="true" start_pos="242" len="0" sel_text="" />
+  <TabPage type="Source" ctrl="edit1TabControl" file="dhry_2.c" top_line="141" start_pos="4409" len="0" sel_text="" />
+  <TabPage type="Script" ctrl="edit1TabControl" file="Script.ETpuCommand" top_line="32" start_pos="1055" len="0" sel_text="" />
+  <TabPage type="Source" ctrl="edit2TabControl" file="dhry.h" top_line="387" sel="true" focus="true" start_pos="17771" len="0" sel_text="" />
+  <TabPage type="Output" ctrl="output1TabControl" sel="true" />
+  <TabPage type="LocalVariable" ctrl="output1TabControl" target="0">
+    <Columns width_2="295" width_4="146" />
+  </TabPage>
+  <TabPage type="Watch" ctrl="output2TabControl">
+    <Columns width_1="265" width_2="293" width_3="148" />
+    <SymbolList>
+      <Symbol name="Begin_TCR1" target="0" script="False" />
+      <Symbol name="End_TCR1" target="0" script="False" />
+      <Symbol name="Str_1_Loc" target="0" script="False" />
+      <Symbol name="Next_Ptr_Glob" target="0" script="False" />
+      <Symbol name="Ptr_Glob" target="0" script="False" />
+    </SymbolList>
+  </TabPage>
+  <TabPage type="LocalVariable" ctrl="output2TabControl" sel="true" target="0">
+    <Columns />
+  </TabPage>
+  <TabPage type="MemoryWindow" ctrl="output2TabControl" target="eTPU_A" fc="5" bpd="4" bpa="1" box="0" row="0" addr="0" nib="0" cfr="4" />
+  <TabPage type="Project" ctrl="projectTabControl" file="Proj.ETpuIdeProj" sel="true" />
+  <TabPage type="RegisterWindow" ctrl="projectTabControl" target_tag="eTpu" win_type="FTWT_REGISTER" channel="-1" target="eTPU_A" top_line="0" />
+  <selected_project_node name="ReadMe.txt" />
+  <!--Saved last-used directories-->
+  <search_dialog scripts="true">
+    <find val="Int_2_Loc" />
+    <find val="Ptr_Comp" />
+    <find val="Next_Ptr_Glob" />
+    <find val="HZ" />
+    <find val="err" />
+    <replace val="Int_2_Loc" />
+    <replace val="Ptr_Comp" />
+    <replace val="Next_Ptr_Glob" />
+    <replace val="HZ" />
+    <directory val="C:\Mtdt\TestsHigh\UploadsETpu\Dhrystone\" />
+    <directory val="C:\Mtdt\DemosETpu\Dhrystone\" />
+    <directory val="C:\ASHWARE\MtdtCode\Mtdt_trunk1\Mtdt\DemosETpu\Dhrystone\" />
+    <directory val="C:\ASHWARE\MtdtCode\Mtdt_trunk1\Mtdt\Consulting\Dhrystone\" />
+    <file_types val="*.c,*.h" />
+    <file_types val="*.ETpuCommand" />
+    <file_types val="*.Vector" />
+  </search_dialog>
+  <workshops enabled="False" />
+  <ide_is_setting>
+    <ETPU_ALERT_ON_BAD_MEM_SIZE val="False" />
+  </ide_is_setting>
+  <step_asm_multiple val="10" />
+  <step_angle_teeth_multiple val="3" />
+  <is_goto_abs_angle val="false" />
+  <goto_absolute_angle cycles="1" degrees="2" hundredths="3" />
+  <goto_delta_angle cycles="4" degrees="5" hundredths="6" />
+  <goto_absolute_time ks="0" sec="0" ms="30" us="281" ns="554" />
+  <goto_delta_time ks="0" sec="0" ms="0" us="10" ns="0" />
+  <is_goto_abs_time val="false" />
+  <goto_line_num val="10" />
+  <mem_win_get_addr val="48" />
+  <make_node target="eTPU_A" file="obj\dhry_1.eao" time="5248559959461196260">
+    <dependent_file file="dhry_1.c" time="5248559074318049520" />
+    <dependent_file file="dhry.h" time="5248557719307387904" />
+    <dependent_file file="..\..\..\Gui\testfiles\Include\etpu_std.h" time="5248478733051907320" />
+    <dependent_file file="..\..\..\Gui\testfiles\Include\ETpu_Hw.h" time="5247561491437387904" />
+    <dependent_file file="..\..\..\Gui\testfiles\Include\ETpu_Lib.h" time="5247605759913146278" />
+    <dependent_file file="Proj.ETpuIdeProj" time="5248559075478725907" />
+  </make_node>
+  <make_node target="eTPU_A" file="obj\dhry_2.eao" time="5248559959462486333">
+    <dependent_file file="dhry_2.c" time="5248557719307387904" />
+    <dependent_file file="dhry.h" time="5248557719307387904" />
+    <dependent_file file="..\..\..\Gui\testfiles\Include\etpu_std.h" time="5248478733051907320" />
+    <dependent_file file="..\..\..\Gui\testfiles\Include\ETpu_Hw.h" time="5247561491437387904" />
+    <dependent_file file="..\..\..\Gui\testfiles\Include\ETpu_Lib.h" time="5247605759913146278" />
+    <dependent_file file="Proj.ETpuIdeProj" time="5248559075478725907" />
+  </make_node>
+  <make_node target="eTPU_A" file="Script.ETpuCommand" time="5248559073634900446">
+    <dependent_file file="Script.ETpuCommand" time="5248559073634900446" />
+    <dependent_file file="Dhrystone_defines.h" time="5248559959484657601" />
+    <dependent_file file="Dhrystone_idata.h" time="5248559959484627600" />
+  </make_node>
+  <source_file name="RATIONALE" tool="None" />
+  <source_file name="ReadMe.txt" tool="None" />
+  <!--=======================================================-->
+  <!--======    START TARGET-SPECIFIC SETTINGS        =======-->
+  <target name="eTPU_A" />
+  <!--======    END TARGET-SPECIFIC SETTINGS          =======-->
+  <!--=======================================================-->
+</user>
