@@ -3,4 +3,5 @@ and provides the Dhrystone score and DMIPS result.
 
 To run this demo, in the 'Run' menu select 'Reset and Go'.
 
-A dialog will open that with the Dhrystone calculation result.
+After running the benchmark a dialog will open to display the 
+Dhrystone calculation result.
