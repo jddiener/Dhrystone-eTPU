@@ -258,13 +258,8 @@ void main ()
   End_TCR1 = tcr1;
   SetPinLow();
   
-  // delay return - allows local (non-global) var values to be checked in script
-  {
-      volatile int i = 0;
-      while (i++ < 1000000)
-        NOP();
-  }
-
+  NOP(); // ASHtag_verify
+  
 // successful execution verified in associated script file
 #if 0
   /**************/

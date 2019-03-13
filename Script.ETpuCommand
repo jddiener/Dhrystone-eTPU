@@ -41,8 +41,8 @@ write_chan_cpr(             BENCHMARK_CHAN, 3);
 wait_time(1);
 write_global_time_base_enable(1);
 
-// Run for 100 micro-seconds
-wait_time(100);
+// Run until test done
+at_code_tag_ex("ASHtag_verify", 1000, FAIL_ON_TIMEOUT);
 
 // verify test ran correctly
 verify_val_int("Int_Glob", "==", 5);
