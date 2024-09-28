@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<user creator="ASH WARE, Inc." version="2.70.0.0">
+<user creator="ASH WARE, Inc." version="2.75.2.0">
   <build_script_define_etpu val="&lt;None&gt;" />
   <build_script_def val="ETPU_CODE_SIZE  0x10000" />
   <build_script_def val="ETPU_RAM_SIZE  0x4000" />
   <build_script_def val="ETPU_SUB_ID_1 MPC5777C_0_A" />
   <build_script_def val="ETPU_SUB_ID_2 MPC5777C_0_B" />
   <build_file name="zzz_1ETpuSim.MtDtBuild" in_build_script_dir="true" />
-  <pgm_model val="1" />
-  <cc_wd val="512" />
-  <cc_wd val="513" />
-  <etec_dir val="Development" />
   <source_code_search />
   <!--=======================================================-->
   <!--======    START TARGET-SPECIFIC SETTINGS        =======-->
   <target name="eTPU_A">
+    <pgm_model val="1" />
+    <cc_wd val="512" />
+    <cc_wd val="513" />
+    <etec_dir val="Version 3.01C" />
     <internal_build val="true" />
     <link_file name="Dhrystone.elf" link_wd0="71027" link_wd1="71026" />
     <primary_script_file name="Script.ETpuCommand" />

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<user creator="ASH WARE, Inc." version="2.70.0.0">
+<user creator="ASH WARE, Inc." version="2.75.2.0">
   <source_code_search />
-  <app_dimensions x="1581" y="5" w="1600" h="1000" />
+  <app_dimensions x="2250" y="322" w="1600" h="1000" />
   <splitter name="projectBtmSplitter" distance="586" total="886" orientation="horizontal" />
   <splitter name="projectRhtSplitter" parent="projectBtmSplitter" order="1" distance="258" total="1584" orientation="vertical" />
   <splitter name="editSplitter" parent="projectRhtSplitter" order="2" distance="671" total="1322" orientation="vertical" />
@@ -38,16 +38,15 @@
       <ScopeChan index="-1" name="_ch31.out" alias="_ch31.out" target_index="0" height="0" chan_state_mask="0" />
     </ScopeChannels>
   </TabPage>
-  <TabPage type="Breakpoint" is_closed="true" ctrl="projectTabControl" />
   <TabPage type="TraceBuf" is_closed="true" ctrl="output2TabControl">
     <eTPU_A />
   </TabPage>
-  <TabPage type="Source" ctrl="edit1TabControl" file="dhry_1.c" top_line="249" sel="true" start_pos="6779" len="0" sel_text="" />
-  <TabPage type="Text" ctrl="edit1TabControl" file="ReadMe.txt" top_line="0" start_pos="242" len="0" sel_text="" />
+  <TabPage type="Source" ctrl="edit1TabControl" file="dhry_1.c" top_line="7" sel="true" start_pos="6779" len="0" sel_text="" />
   <TabPage type="Source" ctrl="edit1TabControl" file="dhry_2.c" top_line="141" start_pos="4409" len="0" sel_text="" />
   <TabPage type="Source" ctrl="edit2TabControl" file="dhry.h" top_line="370" start_pos="17771" len="0" sel_text="" />
-  <TabPage type="Script" ctrl="edit2TabControl" file="Script.ETpuCommand" top_line="62" sel="true" start_pos="3135" len="0" sel_text="" />
-  <TabPage type="Output" ctrl="output1TabControl" sel="true" focus="true" />
+  <TabPage type="Script" ctrl="edit2TabControl" file="Script.ETpuCommand" top_line="0" sel="true" start_pos="3135" len="0" sel_text="" />
+  <TabPage type="SettingsGrid" ctrl="edit2TabControl" />
+  <TabPage type="Output" ctrl="output1TabControl" sel="true" />
   <TabPage type="LocalVariable" ctrl="output1TabControl" target="0">
     <Columns width_2="295" width_4="146" />
   </TabPage>
@@ -66,7 +65,8 @@
   </TabPage>
   <TabPage type="MemoryWindow" ctrl="output2TabControl" target="eTPU_A" fc="5" bpd="4" bpa="1" box="0" row="0" addr="0" nib="0" cfr="4" />
   <TabPage type="Project" ctrl="projectTabControl" file="Proj.ETpuIdeProj" sel="true" />
-  <TabPage type="RegisterWindow" ctrl="projectTabControl" target_tag="eTpu" win_type="FTWT_REGISTER" channel="-1" target="eTPU_A" top_line="0" />
+  <TabPage type="RegisterWindow" ctrl="projectTabControl" target_tag="eTpu" win_type="FTWT_REGISTER" target="eTPU_A" top_line="0" />
+  <selected_project_node name="CC: dhry_2.c" />
   <!--Saved last-used directories-->
   <search_dialog scripts="true">
     <find val="Int_2_Loc" />
@@ -78,6 +78,7 @@
     <replace val="Ptr_Comp" />
     <replace val="Next_Ptr_Glob" />
     <replace val="HZ" />
+    <directory val="C:\GIT\Dhrystone-eTPU\" />
     <directory val="C:\ASHWARE\MtdtCode\GIT\Dhrystone\" />
     <directory val="C:\Mtdt\TestsHigh\UploadsETpu\Dhrystone\" />
     <directory val="C:\Mtdt\DemosETpu\Dhrystone\" />
@@ -101,26 +102,26 @@
   <is_goto_abs_time val="false" />
   <goto_line_num val="10" />
   <mem_win_get_addr val="48" />
-  <make_node target="eTPU_A" file="obj\dhry_1.eao" time="5248567044535006045">
-    <dependent_file file="dhry_1.c" time="5248567044530706462" />
-    <dependent_file file="dhry.h" time="5248559961507387904" />
-    <dependent_file file="..\..\Mtdt_trunk1\Mtdt\Gui\Testfiles\Include\etpu_std.h" time="5248059781127387904" />
-    <dependent_file file="..\..\Mtdt_trunk1\Mtdt\Gui\Testfiles\Include\ETpu_Hw.h" time="5247561576658210653" />
-    <dependent_file file="..\..\Mtdt_trunk1\Mtdt\Gui\Testfiles\Include\ETpu_Lib.h" time="5247605474377387904" />
-    <dependent_file file="Proj.ETpuIdeProj" time="5248559961507387904" />
+  <make_node target="eTPU_A" file="obj\dhry_1.eao" time="5250316826325442301">
+    <dependent_file file="dhry_1.c" time="5250316824783986693" />
+    <dependent_file file="dhry.h" time="5250316824783986693" />
+    <dependent_file file="C:\Program Files (x86)\ASH WARE\eTPU Compiler V3_01C\Include\etpu_std.h" time="5250221025527387904" />
+    <dependent_file file="C:\Program Files (x86)\ASH WARE\eTPU Compiler V3_01C\Include\ETpu_Hw.h" time="5250221025527387904" />
+    <dependent_file file="C:\Program Files (x86)\ASH WARE\eTPU Compiler V3_01C\Include\ETpu_Lib.h" time="5250221025527387904" />
+    <dependent_file file="Proj.ETpuIdeProj" time="5250316826323700692" />
   </make_node>
-  <make_node target="eTPU_A" file="obj\dhry_2.eao" time="5248567044540702661">
-    <dependent_file file="dhry_2.c" time="5248559961507387904" />
-    <dependent_file file="dhry.h" time="5248559961507387904" />
-    <dependent_file file="..\..\Mtdt_trunk1\Mtdt\Gui\Testfiles\Include\etpu_std.h" time="5248059781127387904" />
-    <dependent_file file="..\..\Mtdt_trunk1\Mtdt\Gui\Testfiles\Include\ETpu_Hw.h" time="5247561576658210653" />
-    <dependent_file file="..\..\Mtdt_trunk1\Mtdt\Gui\Testfiles\Include\ETpu_Lib.h" time="5247605474377387904" />
-    <dependent_file file="Proj.ETpuIdeProj" time="5248559961507387904" />
+  <make_node target="eTPU_A" file="obj\dhry_2.eao" time="5250316826327307017">
+    <dependent_file file="dhry_2.c" time="5250316824783996665" />
+    <dependent_file file="dhry.h" time="5250316824783986693" />
+    <dependent_file file="C:\Program Files (x86)\ASH WARE\eTPU Compiler V3_01C\Include\etpu_std.h" time="5250221025527387904" />
+    <dependent_file file="C:\Program Files (x86)\ASH WARE\eTPU Compiler V3_01C\Include\ETpu_Hw.h" time="5250221025527387904" />
+    <dependent_file file="C:\Program Files (x86)\ASH WARE\eTPU Compiler V3_01C\Include\ETpu_Lib.h" time="5250221025527387904" />
+    <dependent_file file="Proj.ETpuIdeProj" time="5250316826323700692" />
   </make_node>
-  <make_node target="eTPU_A" file="Script.ETpuCommand" time="5248567045483308103">
-    <dependent_file file="Script.ETpuCommand" time="5248567045483308103" />
-    <dependent_file file="Dhrystone_defines.h" time="5248567044573548651" />
-    <dependent_file file="Dhrystone_idata.h" time="5248567044573518681" />
+  <make_node target="eTPU_A" file="Script.ETpuCommand" time="5250316824783976732">
+    <dependent_file file="Script.ETpuCommand" time="5250316824783976732" />
+    <dependent_file file="Dhrystone_defines.h" time="5250316826349151387" />
+    <dependent_file file="Dhrystone_idata.h" time="5250316826349121471" />
   </make_node>
   <source_file name="RATIONALE" tool="None" />
   <source_file name="ReadMe.txt" tool="None" />
